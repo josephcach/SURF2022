@@ -11,7 +11,7 @@ Interpolator_trilinear::~Interpolator_trilinear()
 }
 
 
-static std::vector<double> Interpolate(const std::array<double, 8>& cube_corner_values, 
+std::vector<double> Interpolator_trilinear::Interpolate(const std::array<double, 8>& cube_corner_values, 
         const std::vector<double>& x, const std::vector<double>& y, const std::vector<double>& z)
 {
     if (x.size() != y.size() || x.size() != z.size())

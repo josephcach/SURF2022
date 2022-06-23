@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <iostream>
-#include "Interpolator_trilinear.cpp"
-
+#include "Interpolator_trilinear.h"
+#include <cstdlib>
+#include <cmath>
 
 
 double function(double x, double y, double z)
@@ -39,7 +39,7 @@ int main()
     ///Compute the error using 'function' again and the positions x y z in a simple for loop.
 
     for(int i=0; i<N;i++){
-        error[i] = abs(result[i]-function(x[i],y[i],z[i]));
+        error[i] = std::abs(result[i]-function(x[i],y[i],z[i]));
         printf("%f\n",error[i]);
     }
     return 0;
