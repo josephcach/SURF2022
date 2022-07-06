@@ -5,13 +5,19 @@
 const long long N = 10000;
 const int Nmesh = 5;
 
+double function(double x,double y, double z){
+    int k=1;
+    double mag = std::sqrt(std::pow(x,2)+std::pow(y,2)+std::pow(z,2));
+    return std::cos(k*mag);
+}
+
 int main(){ 
 
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_real_distribution<double> dis(-1.0,1.0);
     std::vector<std::vector<std::vector<double> > > coefs;
-    coefs = Interpolator_chebyshev::GetCoefficients(Nmesh);
+    coefs = Interpolator_chebyshev::GetCoefficients(Nmesh,&function);
     double x,y,z;
     double error;
     double result;
@@ -29,7 +35,7 @@ int main(){
     }
     printf("Average Error over %llu points: %f",N,total_err/N);
 
-    /*  Evaluates error=0 @chebyshev points 
+    /* Evaluates error=0 @chebyshev points 
     std::vector<double> points = Interpolator_chebyshev::GetPoints(Nmesh);
     for(int i=0;i<Nmesh;i++){
         for(int j=0;j<Nmesh;j++){

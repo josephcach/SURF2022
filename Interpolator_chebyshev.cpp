@@ -41,7 +41,7 @@ std::vector<double>  Interpolator_chebyshev::GetPoints(int N){
     return points;
 }
 
-std::vector<std::vector<std::vector<double> > > Interpolator_chebyshev::GetCoefficients(const int N){
+std::vector<std::vector<std::vector<double> > > Interpolator_chebyshev::GetCoefficients(const int N, const std::function<double(double, double, double)>& fun){
     std::vector<std::vector<std::vector<double> > > coefs(N, std::vector<std::vector<double> >(N, std::vector<double>(N, 0))); 
     std::vector<std::vector<std::vector<double> > > fvals(N, std::vector<std::vector<double> >(N, std::vector<double>(N, 0)));
     std::vector<double> points = GetPoints(N);

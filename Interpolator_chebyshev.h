@@ -1,5 +1,6 @@
 #include <array>
 #include <vector>
+#include <functional>
 
 class Interpolator_chebyshev
 {
@@ -16,7 +17,8 @@ public:
     
     static std::vector<double> GetPoints(int N);
     
-    static std::vector<std::vector<std::vector<double> > > GetCoefficients(const int N);
+    static std::vector<std::vector<std::vector<double> > > 
+        GetCoefficients(const int N, const std::function<double(double, double, double)>& fun);
     
     static double InterpolateWCoeffs(std::vector<std::vector<std::vector<double> > > coefs, int N, double x, double y, double z);
 
