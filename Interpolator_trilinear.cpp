@@ -1,5 +1,5 @@
 #include "Interpolator_trilinear.h"
-#include <exception>
+#include <stdexcept>
 
 
 Interpolator_trilinear::Interpolator_trilinear(/* args */)

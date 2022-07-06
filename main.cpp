@@ -6,7 +6,7 @@
 
 
 const long long N = 10000;
-const  int Np = 10;
+const int Np = 10;
     
 double function(double x, double y, double z, std::array<double,3> x0)
 {

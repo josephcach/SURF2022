@@ -2,10 +2,12 @@
 #include "Interpolator_chebyshev.h"
 #include <functional>
 #include <random>
-    constexpr int N = 5;
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<double> dis(-1.0,1.0);
+
+
+constexpr int N = 5;
+std::random_device rd;
+std::mt19937 gen(rd());
+std::uniform_real_distribution<double> dis(-1.0,1.0);
 
 TEST(ChebyshevTest, Degree0Coeff__Test){
 
@@ -110,8 +112,8 @@ TEST(ChebyshevTest, ChebPoints__Test){
     }
 }
 
-int main(){
-testing::InitGoogleTest();
+// int main(){
+// testing::InitGoogleTest();
 
-return RUN_ALL_TESTS();
-}
+// return RUN_ALL_TESTS();
+// }
