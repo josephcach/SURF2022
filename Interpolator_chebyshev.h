@@ -1,3 +1,6 @@
+#ifndef INTERPOLATOR_CHEBYSHEV_H
+#define INTERPOLATOR_CHEBYSHEV_H
+
 #include <array>
 #include <vector>
 #include <functional>
@@ -24,3 +27,5 @@ public:
 
     static double function(double x, double y, double z);
 };
+
+#endif

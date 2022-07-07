@@ -12,6 +12,9 @@ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_DEBUG} -ggdb -O0
 set(GTEST_PATH ${CMAKE_SOURCE_DIR}/../googletest)
 add_subdirectory(${GTEST_PATH} ${CMAKE_BINARY_DIR}/gtest)
 
+#add the hermite stuff
+add_subdirectory(${CMAKE_SOURCE_DIR}/Hermite)
+
 
 #enable_testing()
 
