@@ -11,5 +11,5 @@ class TestInterpolatorHermite : public ::testing::Test
 
 TEST_F(TestInterpolatorHermite, ctor1)
 {
-
+    
 }
