@@ -49,7 +49,7 @@ std::vector<std::vector<std::vector<double> > > Interpolator_chebyshev::GetCoeff
     for(int i=0;i<N;i++){
         for(int j=0;j<N;j++){
             for(int k=0;k<N;k++){
-                fvals[i][j][k] = function(points[i],points[j],points[k]);
+                fvals[i][j][k] = fun(points[i],points[j],points[k]);
             }
         }
     }
@@ -94,9 +94,5 @@ double Interpolator_chebyshev::InterpolateWCoeffs(std::vector<std::vector<std::v
     return result; 
 }
 
-double Interpolator_chebyshev::function(double x,double y, double z){
-    int k=1;
-    double mag = std::sqrt(std::pow(x,2)+std::pow(y,2)+std::pow(z,2));
-    return std::cos(k*mag);
-}
+
 

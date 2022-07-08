@@ -21,6 +21,4 @@ public:
         GetCoefficients(const int N, const std::function<double(double, double, double)>& fun);
     
     static double InterpolateWCoeffs(std::vector<std::vector<std::vector<double> > > coefs, int N, double x, double y, double z);
-
-    static double function(double x, double y, double z);
 };
