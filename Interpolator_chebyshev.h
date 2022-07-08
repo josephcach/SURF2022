@@ -1,3 +1,6 @@
+#ifndef INTERPOLATOR_CHEBYSHEV_H
+#define INTERPOLATOR_CHEBYSHEV_H
+
 #include <array>
 #include <vector>
 #include <functional>
@@ -22,3 +25,5 @@ public:
     
     static double InterpolateWCoeffs(std::vector<std::vector<std::vector<double> > > coefs, int N, double x, double y, double z);
 };
+
+#endif

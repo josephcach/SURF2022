@@ -1,3 +1,5 @@
+#ifndef INTERPOLATOR_TRILINEAR_H
+#define INTERPOLATOR_TRILINEAR_H
 
 #include <array>
 #include <vector>
@@ -18,4 +20,7 @@ public:
     static std::vector<double> Interpolate(const std::array<double, 8>& cube_corner_values, 
         const std::vector<double>& x, const std::vector<double>& y, const std::vector<double>& z);
 };
+
+
+#endif
 
