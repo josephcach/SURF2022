@@ -1,6 +1,7 @@
 #include "Piecewise_trilinear.h"
 #include <cstdlib>
 #include <cmath>
+#include <stdio.h>
 
 
 double function(double x, double y, double z){

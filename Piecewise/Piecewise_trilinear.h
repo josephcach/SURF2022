@@ -7,17 +7,17 @@
 
 class Piecewise_trilinear
 {
-    private:
+private:
 
-    public:
-    Piecewise_trilinear();
-    ~Piecewise_trilinear();
+public:
+    Piecewise_trilinear() {}
+    ~Piecewise_trilinear() {}
 
     static std::vector<std::vector<std::vector<double> > > GetCorners(const int N,
-     const std::function<double(double, double, double)>& fun);
+        const std::function<double(double, double, double)>& fun);
 
     static double Interpolate(const int N, const std::vector<std::vector<std::vector<double> > >& corners, 
-    const double x, const double y, const double z );
+        const double x, const double y, const double z );
 
 };
 

@@ -1,32 +1,32 @@
 #include "Piecewise_trilinear.h"
 
 
-Piecewise_trilinear::Piecewise_trilinear(){
-}
-Piecewise_trilinear::~Piecewise_trilinear(){
 
-}
 
-   std::vector<std::vector<std::vector<double> > > GetCorners(const int N, 
-   const std::function<double(double, double, double)>& fun){
-      std::vector<std::vector<std::vector<double> > > corners(N, std::vector<std::vector<double> >(N, std::vector<double>(N, 0))); 
-      std::vector<double> corner_coords(N);
-      double h = 2.0 / (double) (N-1);
-      for(int i=0;i<N;i++){
-        corner_coords[i] = -1 + i*h;
-      }
-      for(int i=0;i<N;i++){
-        for(int j=0;j<N;j++){
-          for(int k=0;k<N;k++){
-            corners[i][j][k] = fun(corner_coords[i],corner_coords[j],corner_coords[k]);
-          }
-        }
-      }
-      return corners;
+std::vector<std::vector<std::vector<double> > > Piecewise_trilinear::GetCorners(const int N, 
+   const std::function<double(double, double, double)>& fun)
+{
+  std::vector<std::vector<std::vector<double> > > corners(N, std::vector<std::vector<double> >(N, std::vector<double>(N, 0))); 
+  std::vector<double> corner_coords(N);
+  double h = 2.0 / (double) (N-1);
+  for(int i=0;i<N;i++)
+  {
+    corner_coords[i] = -1 + i*h;
   }
+  
+  for(int i=0;i<N;i++){
+    for(int j=0;j<N;j++){
+      for(int k=0;k<N;k++){
+        corners[i][j][k] = fun(corner_coords[i],corner_coords[j],corner_coords[k]);
+      }
+    }
+  }
+  return corners;
+}
 
-  double Interpolate(const int N, const std::vector<std::vector<std::vector<double> > >&  corners, 
-  const double x, const double y, const double z ){
+double Piecewise_trilinear::Interpolate(const int N, const std::vector<std::vector<std::vector<double> > >&  corners, 
+  const double x, const double y, const double z )
+  {
     double h = 2.0 / (double) (N-1);
     int xind =(int) (x+1 / h);
     int yind =(int) (x+1 / h);

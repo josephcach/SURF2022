@@ -14,6 +14,7 @@ add_subdirectory(${GTEST_PATH} ${CMAKE_BINARY_DIR}/gtest)
 
 #add the hermite stuff
 add_subdirectory(${CMAKE_SOURCE_DIR}/Hermite)
+add_subdirectory(${CMAKE_SOURCE_DIR}/Piecewise)
 
 
 #enable_testing()
