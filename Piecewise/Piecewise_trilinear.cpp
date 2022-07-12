@@ -28,10 +28,9 @@ double Piecewise_trilinear::Interpolate(const int N, const std::vector<std::vect
   const double x, const double y, const double z )
   {
     double h = 2.0 / (double) (N-1);
-    int xind =(int) (x+1 / h);
-    int yind =(int) (x+1 / h);
-    int zind =(int) (x+1 / h);
-    
+    int xind =  (x+1)/h;
+    int yind =  (y+1)/h;
+    int zind =  (z+1)/h;
     double xd = (x - (xind*h-1))/h;
     double yd = (y - (yind*h-1))/h;
     double zd = (z - (zind*h-1))/h;
